@@ -1,0 +1,9 @@
+venv
+*.pyc
+*.pyo
+*~
+localsettings.py
+comprateca/media/pictures/
+comprateca/media/images/facebook_profiles/
+comprateca/media/downloads/
+\#*
