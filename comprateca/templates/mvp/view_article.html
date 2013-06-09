@@ -19,13 +19,25 @@
 	</div>
 
 	<div class="wrapper-transparent">
-		<p class="size-05em">Estoy Comprando</p>
+		<div class="list-item">
+			<div class="list-item size-14 color-black">
+				<p>{{ article.owner.get_full_name }}</p>
+			</div>
+			<div class="list-item">
+				<img src="http://graph.facebook.com/{{ article.owner.facebookprofile.facebook_id }}/picture?width=60&height=150">
+			</div>
+		</div>
+		<div class="list-item">
+			<p class="size-05em">Estoy Comprando</p>
 
-		<p>{{ article.title|title}}</p>
+			<p>{{ article.title|title}}</p>
 
-		<p class="size-05em">a</p>
+			<p class="size-05em">a</p>
 
-		<p>$ {{ article.price }}</p>
+			<p>$ {{ article.price }}</p>
+
+			<p class="size-14 color-black">Publicado hace {{ article.date|timesince }}</p>
+		</div>
 	</div>
 
 	<div class="wrapper-white text-align-center">
