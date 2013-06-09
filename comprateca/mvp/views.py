@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
@@ -53,6 +53,19 @@ def view_article(request,articleID):
 	article = get_object_or_404(Article, pk=articleID)
 	return render_to_response('mvp/view_article.html',
 		{'article':article},context_instance=RequestContext(request))
+
+
+#Test FacebookUserConverter Model 
+def test_open_facebook(request):
+	from django_facebook.api import FacebookUserConverter
+
+	fb = get_persistent_graph(request)  
+
+	instace = FacebookUserConverter(fb)
+
+	#Get Friends
+	return HttpResponse(instace.get_friends())
+
 
 
 
