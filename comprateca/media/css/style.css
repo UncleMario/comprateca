@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Sintony);
+@import url(http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic);
+
 
 /* ******* START: CSS RESET ******* */
 html, body, div, span, applet, object, iframe,
@@ -49,6 +51,13 @@ header noscript {
 ul {
 	list-style: none;
 }
+.alert{
+	font-size: 16px;
+	background: #F83E5B;
+	padding: 10px;
+	width: 50%;
+	margin: 0 auto;
+}
 .area{
 	background: #333 url("/media/img/wavegrid.png");
 	font-family: 'Sintony', sans-serif;
@@ -85,6 +94,12 @@ ul {
 	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
 	text-shadow: 0px 0px 1px #000;
 }
+.color-green{
+	color:#00CC00;
+}
+.color-blue{
+	color:#1047A9;
+}
 .errorlist{
 	font-size: 14px;
 	color: red;
@@ -106,16 +121,28 @@ ul {
 }
 .footer{
 	background: #42E73A;
-	height: 100px;
+	border-top: 3px solid #00675C;
+	color: white;
+	padding: 1em;
 }
+.footer div.links a {
+	padding-right: 0.5em;
+	text-decoration: underline;
+}
+
 .font-sintony{
 	font-family: 'Sintony', sans-serif;
+}
+.font-muli{
+	font-family: "Muli", sans-serif;
 }
 .float-right{
 	float: right;
 }
 .header{
 	background: #D2F700;
+	height: 55px;
+	border-bottom: 2px solid #FF6200;
 }
 .margin-left-20{
 	margin-left: 20px;
@@ -128,7 +155,7 @@ ul {
 	position: fixed;
 	z-index: 9999;
 	bottom: 20px;
-	width: 100%;
+	right: 50%;
 }
 .post-icon{
 	width: 64px;
@@ -145,9 +172,15 @@ ul {
 }
 .search-input{
 	width: 250px;
-	background: white;
 	padding: 7px;
 	border-radius: 10px;
+	border: 1px solid #00CC00;
+	background: white url(/media/img/search.png) no-repeat scroll 0px 0px;
+	background-size: 28px;
+	padding-left:30px;
+}
+.size-14{
+	font-size: 14px !important;
 }
 .size-05em{
 	font-size: 0.5em !important;
@@ -161,8 +194,19 @@ ul {
 .shadow1{
 	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
 }
+.social a {
+	padding-left: 0.5em;
+}
+
+.social img {
+	height: 2em;
+}
 .text-align-center{
 	text-align: center;
+}
+.text-shadow-green{
+	text-shadow: 0px 0px 4px #002905;
+    filter: dropshadow(color=#002905, offx=0, offy=0);
 }
 .vertical-align-top{
 	vertical-align: top !important;

@@ -12,16 +12,23 @@
 		{{ form.errors }}
 
 		<div class="wrapper-transparent">
+
+			<div class="alert">
+				<p>Este anuncio se publicara automaticamente en tu muro de Facebook</p>
+			</div>
+
 			<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
 
 				<div>
 					{{ form.title }}
-					{{ form.title.errors }}
+					{{ form.title.errors }}</br>
+					<span class="size-14 color-blue">Ej. Cargador para Macbook Pro</span>
 				</div>
 
 				<div>
 					{{ form.price }}
-					{{ form.price.errors }}
+					{{ form.price.errors }}</br>
+					<span class="size-14 color-blue">Ej. 500</span>
 				</div>
 
 				<div>

@@ -3,7 +3,7 @@
 	<div class='header-wrapper'>
 		<div class='list-item'>
 			<div class='list-item'>
-				<img width="50" height="50" src="{{ user.facebookprofile.image.url }}">
+				<img width="50" height="50" src="{{ user.facebookprofile.image.url }}" style="border: 3px solid white;">
 			</div>
 			<div class='list-item'>
 				<a href="">{{ user.get_full_name }}</a>
@@ -14,7 +14,7 @@
 				<input class="search-input shadow1" type="text" name="q" placeholder="Busca Articulos">
 			</form>
 		</div>
-		<div class='float-right' style="position:relative;top:5px;right:23px">
+		<div class='float-right text-shadow-green' style="position:relative;top:5px;right:23px;color:white">
 			<div class='list-item margin-left-20 item-right'>
 				<a href="/">Inicio</a>
 			</div>
@@ -24,6 +24,19 @@
 			<div class='list-item margin-left-20 item-right'>
 				<a href="/logout/">Salir</a>
 			</div>
+		</div>
+	</div>
+</div>
+{% else %}
+<div class='header font-sintony'>
+	<div class='header-wrapper'>
+		<div class="list-item text-shadow-green" style="right:-5px;top:10px;position:relative;color:white">
+			<a href="">Inicio</a>
+		</div>
+		<div class="list-item search-form" style="left:10px;top:10px;position:relative">
+			<form method='GET' action='/mvp/search/'>
+				<input class="search-input shadow1" type="text" name="q" placeholder="Busca Articulos">
+			</form>
 		</div>
 	</div>
 </div>
