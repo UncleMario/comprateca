@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "header.html" %}
+
+<div class="content">
+	<div class="catch-phrase" style="background-image: url('/media/img/marketplace2.jpg')">
+
+		<h1>Escribe que quieres comprar y ponle el precio</h1>
+
+		<div class="wrapper-transparent">
+			<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+
+				<div>
+					{{ form.title }}
+					{{ form.title.errors }}
+				</div>
+
+				<div>
+					{{ form.price }}
+					{{ form.price.errors }}
+				</div>
+
+				<div>
+					<input class="button-form button-green" type="submit" value="Publicar">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+{% include "footer.html" %}
+
+{% endblock %}

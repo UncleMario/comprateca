@@ -1,0 +1,25 @@
+{% if user.is_authenticated %}
+<div class='header font-sintony'>
+	<div class='header-wrapper'>
+		<div class='list-item'>
+			<div class='list-item'>
+				<img src="https://graph.facebook.com/jcayetanoz/picture?type=square">
+			</div>
+			<div class='list-item'>
+				<a href="">Juan Carlos Cayetano</a>
+			</div>
+		</div>
+		<div class='float-right'>
+			<div class='list-item margin-left-20'>
+				<a href="/">Inicio</a>
+			</div>
+			<div class='list-item margin-left-20'>
+				<a href="/mvp/">Mis Publicaciones</a>
+			</div>
+			<div class='list-item margin-left-20'>
+				<a href="/logout/">Salir</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}

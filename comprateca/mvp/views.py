@@ -16,7 +16,7 @@ def article(request):
 			article.save()
 			return HttpResponseRedirect('/article/%s' % article.pk)
 	else:
-		form + ArticleForm()
+		form = ArticleForm()
 	return render_to_response('mvp/article.html',
 		{'form':form}, context_instance=RequestContext(request))
 
