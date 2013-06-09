@@ -1,3 +1,5 @@
+import urllib
+
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
@@ -53,6 +55,15 @@ def view_article(request,articleID):
 	article = get_object_or_404(Article, pk=articleID)
 	return render_to_response('mvp/view_article.html',
 		{'article':article},context_instance=RequestContext(request))
+
+def search(request):
+	q = urllib.unquote(request.GET.get('q',''))
+	q = q.strip()
+	if q != '':
+		results = Article.objects.filter(title__icontains= q)
+		total = results.count()
+	return render_to_response('mvp/results.html', 
+		{'results':results, 'total':total, 'article' : q}, context_instance=RequestContext(request))
 
 
 #Test FacebookUserConverter Model 

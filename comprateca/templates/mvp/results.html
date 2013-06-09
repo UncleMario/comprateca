@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "header.html" %}
+<div class="content">
+	<div class="area">
+		<div class="text-align-center">
+			<h1 class="size-2em">Se encontraron {{ total }} resultados para {{ article }}</h1>
+		</div>
+		<div class="size-2em">
+			{% for article in results %}
+			<div class="wrapper-white text-align-center">
+				<a href="/mvp/article/{{ article.pk }}">{{ article.title|title }} a ${{ article.price }}</a>
+				<p class="size-05em">hace {{ article.date|timesince }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% include "post-button.html" %}
+
+{% include "footer.html" %}
+
+{% endblock %}

@@ -8,6 +8,8 @@ urlpatterns = patterns('comprateca.mvp.views',
 
     url(r'^my-publications/$', 'my_publications', name='my publications'),
 
+    url(r'^search/$', 'search', name='search'),
+
     url(r'^test/$','test_open_facebook', name="test"),
    
 ) 

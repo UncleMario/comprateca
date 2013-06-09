@@ -98,6 +98,12 @@ ul {
 	border: 0px;
 	background: white;
 }
+.item-right{
+	padding: 12px;
+}
+.item-right:hover{
+	background: #9FEE00;
+}
 .footer{
 	background: #42E73A;
 	height: 100px;
@@ -133,6 +139,16 @@ ul {
 	padding: 10px;
 	border: 2px solid white;
 }
+.search-form{
+	position: relative;
+	left: 15%
+}
+.search-input{
+	width: 250px;
+	background: white;
+	padding: 7px;
+	border-radius: 10px;
+}
 .size-05em{
 	font-size: 0.5em !important;
 }
@@ -141,6 +157,9 @@ ul {
 }
 .size-3em{
 	font-size: 3em !important;
+}
+.shadow1{
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
 }
 .text-align-center{
 	text-align: center;
