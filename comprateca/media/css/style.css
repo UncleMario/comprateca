@@ -79,14 +79,11 @@ ul {
 	padding: 2em 0em;
 	
 	text-align: center;
-	background: url('/media/img/marketplace.jpg') 50% 0% fixed no-repeat;
+	background: url('/media/img/marketplace.JPG') 50% 0% fixed no-repeat;
 	background-size: cover;
 	
 	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
 	text-shadow: 0px 0px 1px #000;
-}
-.content{
-
 }
 .errorlist{
 	font-size: 14px;
@@ -123,6 +120,24 @@ ul {
 	display: inline-block;
 	vertical-align: middle;
 }
+.post-button{
+	position: fixed;
+	z-index: 9999;
+	bottom: 20px;
+	width: 100%;
+}
+.post-icon{
+	width: 64px;
+	height: 64px;
+	margin: 0 auto;
+	background: none repeat scroll 0% 0% rgb(83, 183, 0);
+	border-radius: 64px;
+	padding: 10px;
+	border: 2px solid white;
+}
+.size-05em{
+	font-size: 0.5em !important;
+}
 .size-2em{
 	font-size: 2em !important;
 }
@@ -144,6 +159,14 @@ ul {
 .wrapper-transparent{
 	background: rgba(200,200,200,.5);
 	padding: 20px;
+}
+.wrapper-white{
+	background: white;
+	padding: 20px;
+	margin: 20px auto;
+	width: 60%;
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
+	text-shadow: 0px 0px 1px #000;
 }
 
 

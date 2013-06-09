@@ -8,9 +8,10 @@
 
 <div class='content'>
 	<div class='catch-phrase'>
-		<h1>Escribe lo que quieras comprar y te aseguramos un excelente precio.</h1>
+		<h1>Escribe lo que quieras comprar y te aseguramos el mejor precio.</h1>
 
 
+		{% if not user.is_authenticated %}
 		<form action="{% url facebook_connect %}?facebook_login=1" method="post">
 			<a href="javascript:void(0);" class="button-form button-green" onclick="F.connect(this.parentNode);">
 				Empezar a Disfrutar
@@ -18,6 +19,11 @@
 			<input type="hidden" name="next" value="{{ next|escape }}" />
 			{% csrf_token %} 
 		</form>
+		{% else %}
+		<a class="button-form button-blue" href="/mvp/article">Publicar Compra</a>
+		{% endif %}
+
+
 	</div>
 	<div class='area text-align-center size-2em'>
 		<h2 class='size-2em'>Como Funciona</h2>
@@ -36,7 +42,7 @@
 
 		<div>
 			<div class='list-item width-30'>
-				<img src="{{ MEDIA_URL }}img/step1.png">
+				<img width="124" height="124" src="{{ MEDIA_URL }}img/step1.png">
 			</div>
 
 			<div class='list-item width-30'>
@@ -44,12 +50,13 @@
 			</div>
 
 			<div class='list-item width-30'>
-				<img src="{{ MEDIA_URL }}img/step3.png">
+				<img width="124" height="124" src="{{ MEDIA_URL }}img/step3.png">
 			</div>
 		</div>
-
 	</div>
 </div>
+
+{% include "post-button.html" %}
 
 {% include "footer.html" %}
 

@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 
@@ -9,6 +9,7 @@ from django_facebook.decorators import facebook_required_lazy, facebook_required
 from django_facebook.utils import next_redirect, parse_signed_request
 
 from comprateca.mvp.forms import ArticleForm
+from comprateca.mvp.models import Article
 
 
 #Publish Article 
@@ -28,7 +29,7 @@ def article(request):
 			fb.set('me/feed', message=message)  
 			messages.info(request, 'Publicar en tu muro esta Compra')  
 
-			return HttpResponseRedirect('/article/%s' % article.pk)
+			return HttpResponseRedirect('/mvp/article/%s' % article.pk)
 	else:
 		form = ArticleForm()
 	return render_to_response('mvp/article.html',
@@ -39,3 +40,17 @@ def articles(request):
 	articles = Article.objects.all()
 	return render_to_response('mvp/articles.html',
 		{'articles':articles},context_instance=RequestContext(request))
+
+
+def view_article(request,articleID):
+	article = get_object_or_404(Article, pk=articleID)
+	return render_to_response('mvp/view_article.html',
+		{'article':article},context_instance=RequestContext(request))
+
+
+
+
+
+
+
+

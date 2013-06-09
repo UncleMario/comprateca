@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'django_facebook/_facebook_js.html' %}
+
+{% include "header.html" %}
+<div class="content">
+	<div class="catch-phrase" style="background-image: url('/media/img/library.jpg')">
+
+	<div class="wrapper-transparent">
+		<p class="size-05em">Estoy Comprando</p>
+
+		<p>{{ article.title|title}}</p>
+
+		<p class="size-05em">a</p>
+
+		<p>$ {{ article.price }}</p>
+	</div>
+
+	<div class="wrapper-white text-align-center">
+		<h3 style="color:black">Ofertame Aqui</h3>
+		<div class="fb-comments" data-href="http://www.comprateca.com/mvp/article/{{ article.pk }}" data-width="600" data-num-posts="10"></div>
+	</div>
+</div>
+
+{% include "post-button.html" %}
+
+{% include "footer.html" %}
+
+{% endblock %}
