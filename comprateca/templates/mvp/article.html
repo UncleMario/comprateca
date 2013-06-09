@@ -9,6 +9,8 @@
 
 		<h1>Escribe que quieres comprar y ponle el precio</h1>
 
+		{{ form.errors }}
+
 		<div class="wrapper-transparent">
 			<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
 

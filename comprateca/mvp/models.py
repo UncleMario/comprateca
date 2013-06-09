@@ -27,3 +27,9 @@ class Article(models.Model):
 	def __unicode__(self):
 		return u'%s' % self.title
 
+	def get_url(self):
+		return 'http://www.comprateca.com/mvp/article/%s' % self.pk
+
+	def get_wall_message(self):
+		return 'Estoy Comprando: %s a $%s, vendemelo en este link %s' % (self.title, self.price, self.get_url())
+
