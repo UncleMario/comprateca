@@ -33,3 +33,4 @@ class Article(models.Model):
 	def get_wall_message(self):
 		return 'Estoy Comprando: %s a $%s, vendemelo en este link %s' % (self.title, self.price, self.get_url())
 
+

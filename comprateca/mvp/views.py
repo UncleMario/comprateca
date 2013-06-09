@@ -42,6 +42,13 @@ def articles(request):
 		{'articles':articles},context_instance=RequestContext(request))
 
 
+@login_required(login_url='/login/')
+def my_publications(request):
+	articles = Article.objects.filter(owner=request.user)
+	return render_to_response('mvp/my_publications.html',
+		{'articles':articles},context_instance=RequestContext(request))
+
+
 def view_article(request,articleID):
 	article = get_object_or_404(Article, pk=articleID)
 	return render_to_response('mvp/view_article.html',
