@@ -21,7 +21,7 @@ ADMINS = (
     ('Juan Carlos Cayetano', 'jc@brainn.co'),
 )
 
-AUTH_PROFILE_MODULE = ''
+AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
 
 MANAGERS = ADMINS
 
@@ -126,6 +126,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+
+    'comprateca.mvp',
+
+    'gunicorn',
+    'storages',
+    
+    'django_facebook',
 )
 
 # A sample logging configuration. The only tangible logging

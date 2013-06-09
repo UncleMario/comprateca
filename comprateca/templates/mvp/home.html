@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'django_facebook/_facebook_js.html' %}
+
+<div class='header font-sintony'>
+	<div class='header-wrapper'>
+		<div class='list-item'>
+			<div class='list-item'>
+				<img src="https://graph.facebook.com/jcayetanoz/picture?type=square">
+			</div>
+			<div class='list-item'>
+				<a href="">Juan Carlos Cayetano</a>
+			</div>
+		</div>
+		<div class='float-right'>
+			<div class='list-item margin-left-20'>
+				<a href="">Inicio</a>
+			</div>
+			<div class='list-item margin-left-20'>
+				<a href="">Mis Publicaciones</a>
+			</div>
+			<div class='list-item margin-left-20'>
+				<a href="">Salir</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='content'>
+	<div class='catch-phrase'>
+		<h1>Escribe lo que quieras comprar y te aseguramos un excelente precio.</h1>
+
+
+		<form action="{% url facebook_connect %}?facebook_login=1" method="post">
+			<a href="javascript:void(0);" class="button-form button-green" onclick="F.connect(this.parentNode);">
+				Empezar a Disfrutar
+			</a>
+			<input type="hidden" name="next" value="{{ next|escape }}" />
+			{% csrf_token %} 
+		</form>
+	</div>
+	<div class='area text-align-center size-2em'>
+		<h2 class='size-2em'>Como Funciona</h2>
+		<div class='list-item width-30'>
+			<p>1.Publica</p>
+		</div>
+		<div class='list-item width-30'>
+			<p>2.Recibe Ofertas</p>
+		</div>
+		<div class='list-item width-30'>
+			<p>3.Obten el mejor precio</p>
+		</div>
+
+		<div class='list-item width-30'>
+			<img src="{{ MEDIA_URL }}img/step1.png">
+		</div>
+
+		<div class='list-item width-30'>
+			<img src="{{ MEDIA_URL }}img/step2.png">
+		</div>
+
+		<div class='list-item width-30'>
+			<img src="{{ MEDIA_URL }}img/step3.png">
+		</div>
+	</div>
+</div>
+<div class='footer text-align-center font-sintony'>
+	<h2>comprateca</h2>
+</div>
+{% endblock %}

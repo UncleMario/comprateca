@@ -1,0 +1,132 @@
+@import url(http://fonts.googleapis.com/css?family=Sintony);
+
+/* ******* START: CSS RESET ******* */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+* {
+	outline: none;
+}
+
+input, select, textarea {
+	border: 1px solid gray;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: inherit;
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5 {
+	padding: 0.5em 0px 1em 0px;
+}
+
+header noscript {
+	display: none;
+}
+
+ul {
+	list-style: none;
+}
+.area{
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
+	text-shadow: 0px 0px 1px #000;
+	background: #333 url("/media/img/wavegrid.png");
+	font-family: 'Sintony', sans-serif;
+	
+}
+.button-form{
+	text-decoration: none;
+	padding: 20px 120px;
+	box-shadow: 0px -0.5em 1em rgba(0, 0, 0, 0.25) inset;
+	border-radius: 5px;
+	position: relative;
+	top:50px;
+	width: 350px;
+}
+.button-blue{
+	background: none repeat scroll 0% 0% rgb(59, 89, 152);
+}
+.button-green{
+	background: none repeat scroll 0% 0% rgb(83, 183, 0);
+}
+.button-red{
+	background: none repeat scroll 0% 0% rgb(226, 45, 0);
+}
+.catch-phrase {
+	font-family: 'Sintony', sans-serif;
+	background: #000;
+	color: #FFF;
+	font-size: 3em;
+	padding: 2em 0em;
+	
+	text-align: center;
+	background: url('/media/img/marketplace.jpg') 50% 0% fixed no-repeat;
+	background-size: cover;
+	
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.25);
+	text-shadow: 0px 0px 1px #000;
+}
+.content{
+
+}
+.footer{
+	background: #42E73A;
+}
+.font-sintony{
+	font-family: 'Sintony', sans-serif;
+}
+.float-right{
+	float: right;
+}
+.header{
+	background: #D2F700;
+}
+.header a{
+	text-decoration: none;
+}
+.margin-left-20{
+	margin-left: 20px;
+}
+.list-item{
+	display: inline-block;
+	vertical-align: middle;
+}
+.size-2em{
+	font-size: 2em !important;
+}
+.size-3em{
+	font-size: 3em !important;
+}
+.text-align-center{
+	text-align: center;
+}
+.vertical-align-top{
+	vertical-align: top !important;
+}
+.width-30{
+	width: 30%;
+}
+
+
+

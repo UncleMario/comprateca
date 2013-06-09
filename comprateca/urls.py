@@ -1,17 +1,19 @@
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
+from django.conf import settings
+from django.contrib.auth.views import logout
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'comprateca.views.home', name='home'),
-    # url(r'^comprateca/', include('comprateca.foo.urls')),
+urlpatterns = patterns('django.views.generic.simple',
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^logout/$', logout, {'next_page' : '/'}),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^facebook/', include('django_facebook.urls')),
+
+    url(r'^mvp/', include('comprateca.mvp.urls')),
+
+    url(r'^$', 'direct_to_template', {'template':'mvp/home.html'}),
+
+)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
