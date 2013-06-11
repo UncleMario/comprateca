@@ -131,7 +131,7 @@ INSTALLED_APPS = (
 
     'gunicorn',
     'storages',
-    
+
     'django_facebook',
 )
 
@@ -163,8 +163,6 @@ LOGGING = {
         },
     }
 }
-
-LOGIN_REDIRECT_URL = '/'
 
 #Facebook Settings
 FACEBOOK_APP_ID = '442630502500230'

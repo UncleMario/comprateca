@@ -18,7 +18,21 @@ from comprateca.mvp.models import Article
 @facebook_required(scope='publish_stream')
 @login_required(login_url='/login/')
 def article(request):
-	if request.method == 'POST':
+	if request.method == 'GET':
+		form = ArticleForm(request.GET)
+		if form.is_valid():
+			article = form.save(commit=False)
+			article.owner = request.user
+			article.save()
+
+			#Publish on wall user
+			fb = get_persistent_graph(request)  
+			message = article.get_wall_message()
+			fb.set('me/feed', message=message)  
+			messages.info(request, 'Publicar en tu muro esta Compra')  
+			return HttpResponseRedirect('/mvp/article/%s' % article.pk)
+
+	elif request.method == 'POST':
 		form = ArticleForm(request.POST)
 		if form.is_valid():
 			article = form.save(commit=False)

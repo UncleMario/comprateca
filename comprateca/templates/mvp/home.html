@@ -8,23 +8,57 @@
 
 <div class='content'>
 	<div class='catch-phrase'>
-		<h1>Escribe lo que quieras comprar y te aseguramos el mejor precio.</h1>
+
+		<div class="wrapper-transparent">
+			<img width="295" height="78" src="{{ MEDIA_URL }}img/comprateca.png">
+			<p>
+				<span>Ahora es posible comprar al precio que quieras</span></br>
+				<span class="size-05em">Ya no busques más. Pública lo que desees y ponle un precio.</span>
+			</p>
+		</div>
 
 
-		{% if not user.is_authenticated %}
-		<form action="{% url facebook_connect %}?facebook_login=1" method="post">
-			<a href="javascript:void(0);" class="button-form button-green" onclick="F.connect(this.parentNode);">
-				Empezar a Disfrutar
-			</a>
-			<input type="hidden" name="next" value="{{ next|escape }}" />
-			{% csrf_token %} 
-		</form>
-		{% else %}
-		<a class="button-form button-blue" href="/mvp/article">Publicar Compra</a>
-		{% endif %}
+
+			<form method="POST" action="/mvp/article/" enctype="multipart/form-data">{% csrf_token %}
+				<div>
+					<input id='title' type="text" name="title" class="input-form width-50" placeholder="Nombre del articulo"></br>
+				</div>
+
+				<div>
+					<input id='price' type="text" name="price" class="input-form width-30" placeholder="Precio"></br>
+				</div>
+
+				{% if user.is_authenticated %}
+				<div>
+					<input class="button-form button-green" type="submit" value="Publicar">
+				</div>
+				{% endif %}
+			</form>
+
+				<script type="text/javascript">
+				$(document).on('ready',function(){
+					$('#fbconnect').click(function(){
+						var title = $('#title').val();
+						var price = $('#price').val();
+						var redirect = '/mvp/article/?title=' + title.replace(/\ /g, '+') + '&price=' + price.replace(/\ /g, '+');
+						$('input[name=login_next]').val(redirect);
+						F.connect(this.parentNode);
+					})
+				})
+				</script>
+				{% if not user.is_authenticated %}
+				<form action="{% url facebook_connect %}?facebook_login=1" method="post">
+					<a id="fbconnect" href="javascript:void(0);" class="button-form button-green size-05em">
+						Publicar
+					</a>
+					<input type="hidden" name="login_next"/>
+					{% csrf_token %}  
+				</form>
+				{% endif %}
 
 
 	</div>
+
 	<div class='area text-align-center size-2em'>
 		<h2 class='size-2em'>Como Funciona</h2>
 
