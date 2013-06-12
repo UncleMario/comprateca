@@ -3,21 +3,22 @@
 	<div class='header-wrapper'>
 		<div class='list-item'>
 			<div class='list-item'>
-				<img src="http://graph.facebook.com/{{ user.facebookprofile.facebook_id }}/picture?type=square" style="border: 3px solid white;">
+				<a href="/">
+					<img src="http://graph.facebook.com/{{ user.facebookprofile.facebook_id }}/picture?type=square" style="border: 3px solid white;">
+				</a>
 			</div>
 			<div class='list-item'>
-				<a href="">{{ user.get_full_name }}</a>
+				<a href="/">{{ user.get_full_name }}</a>
 			</div>
 		</div>
 		<div class="list-item search-form">
 			<form method='GET' action='/mvp/search/'>
 				<input class="search-input shadow1" type="text" name="q" placeholder="Busca Articulos">
 			</form>
-			<img width="353" height="130" src="{{ MEDIA_URL }}img/searchhere.png" style="position:absolute;left:270px;top:10px">
 		</div>
 		<div class='float-right text-shadow-green' style="position:relative;top:5px;right:23px;color:white">
 			<div class='list-item margin-left-20 item-right'>
-				<a href="/">Inicio</a>
+				<a href="/mvp/articles/">Ver Todas las publicaciones</a>
 			</div>
 			<div class='list-item margin-left-20 item-right'>
 				<a href="/mvp/my-publications">Mis Publicaciones</a>
@@ -35,7 +36,6 @@
 			<a href="/">
 				<img src="{{ MEDIA_URL }}img/comprateca2.png" width="148" height="39">
 			</a>
-			<img width="353" height="130" src="{{ MEDIA_URL }}img/searchhere.png" style="position:absolute;left:440px;top:10px">
 		</div>
 		<div class="list-item search-form" style="left:10px;top:5px;position:relative">
 			<form method='GET' action='/mvp/search/'>

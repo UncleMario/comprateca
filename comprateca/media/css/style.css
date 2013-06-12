@@ -174,7 +174,7 @@ ul {
 }
 .search-form{
 	position: relative;
-	left: 15%
+	left: 30px;
 }
 .search-input{
 	width: 250px;

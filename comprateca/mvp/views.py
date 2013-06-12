@@ -79,6 +79,12 @@ def search(request):
 		{'results':results, 'total':total, 'article' : q}, context_instance=RequestContext(request))
 
 
+def all_articles(request):
+	articles = Article.objects.all().order_by('date')[:100]
+	return render_to_response('mvp/articles.html',
+		{'articles':articles}, context_instance=RequestContext(request))
+
+
 #Test FacebookUserConverter Model 
 def test_open_facebook(request):
 	from django_facebook.api import FacebookUserConverter
@@ -89,6 +95,8 @@ def test_open_facebook(request):
 
 	#Get Friends
 	return HttpResponse(instace.get_friends())
+
+
 
 
 

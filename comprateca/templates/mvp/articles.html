@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "header.html" %}
+<div class="content">
+	<div class="area">
+		<div class="text-align-center">
+			<h1 class="size-2em">Todas las Publicaciones</h1>
+		</div>
+
+			<div class="alert">
+				<p>Aqui encontraras articulos que las personas estan comprando.</p>
+			</div>
+
+		<div class="size-2em">
+			{% for article in articles %}
+			<div class="wrapper-white text-align-center">
+				<div class="list-item">
+					<img src="http://graph.facebook.com/{{ article.owner.facebookprofile.facebook_id }}/picture?type=square">
+				</div>
+				<div class="list-item">
+					<a href="/mvp/article/{{ article.pk }}">{{ article.title|title }} a ${{ article.price }}</a>
+					<p class="size-05em">hace {{ article.date|timesince }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% include "post-button.html" %}
+
+{% include "footer.html" %}
+
+{% endblock %}
