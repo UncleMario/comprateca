@@ -33,10 +33,10 @@ class Article(models.Model):
 		return 'http://www.comprateca.com/mvp/article/%s' % self.pk
 
 	def get_wall_message(self):
-		return 'Estoy comprando: %s a $%s, véndemelo en este link %s' % (self.title, self.price, self.get_url())
+		return 'Estoy comprando: %s a $%s, vendemelo en este link %s' % (self.title, self.price, self.get_url())
 
 	def get_twitter_message(self):
-		return 'Estoy comprando: %s a $%s, véndemelo aquí --> ' % (self.title, self.price)
+		return 'Estoy comprando: %s a $%s, vendemelo aquí --> ' % (self.title, self.price)
 
 
 
