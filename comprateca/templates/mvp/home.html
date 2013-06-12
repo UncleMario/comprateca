@@ -20,18 +20,13 @@
 
 
 			<form method="POST" action="/mvp/article/" enctype="multipart/form-data">{% csrf_token %}
-				<div>
-					<input id='title' type="text" name="title" class="input-form width-50" placeholder="Nombre del articulo"></br>
-				</div>
 
-				<div>
-					<input id='price' type="text" name="price" class="input-form width-30" placeholder="Precio"></br>
-				</div>
+				<input id='title' type="text" name="title" class="input-form width-350 padding10" placeholder="Nombre del producto"></br>
+
+				<input id='price' type="text" name="price" class="input-form width-350 padding10" placeholder="Precio al que lo deseas" style="position:relative; top:-20px"></br>
 
 				{% if user.is_authenticated %}
-				<div>
-					<input class="button-form button-green" type="submit" value="Publicar">
-				</div>
+				<input class="button-form button-green" type="submit" value="Publicar" style="padding:7px 20px; font-size:16px; position:relative;top:-36px">
 				{% endif %}
 			</form>
 
@@ -48,7 +43,7 @@
 				</script>
 				{% if not user.is_authenticated %}
 				<form action="{% url facebook_connect %}?facebook_login=1" method="post">
-					<a id="fbconnect" href="javascript:void(0);" class="button-form button-green size-05em">
+					<a id="fbconnect" href="javascript:void(0);" class="button-form button-green" style="padding:7px 20px; font-size:16px; position:relative;top:-36px">
 						Publicar
 					</a>
 					<input type="hidden" name="next"/>
@@ -60,7 +55,7 @@
 	</div>
 
 	<div class='area text-align-center size-2em'>
-		<h2 class='size-2em'>Como Funciona</h2>
+		<h2 class='size-2em'>¿Cómo funciona?</h2>
 
 		<div style="color:white">
 			<div class='inline-block vertical-align-top width-30 wrapper-color button-green'>

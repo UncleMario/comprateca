@@ -53,7 +53,7 @@ ul {
 }
 .alert{
 	font-size: 16px;
-	background: #F83E5B;
+	background: #00B0D7;
 	padding: 10px;
 	width: 50%;
 	margin: 0 auto;
@@ -66,10 +66,8 @@ ul {
 }
 .button-form{
 	text-decoration: none;
-	padding: 20px 120px;
 	box-shadow: 0px -0.5em 1em rgba(0, 0, 0, 0.25) inset;
 	border-radius: 5px;
-	width: 350px;
 }
 .button-blue{
 	background: none repeat scroll 0% 0% rgb(59, 89, 152);
@@ -112,7 +110,6 @@ ul {
 }
 .input-form{
 	border-radius: 5px;
-	padding: 20px;
 	border: 0px;
 	background: white;
 }
@@ -123,7 +120,7 @@ ul {
 	background: #9FEE00;
 }
 .footer{
-	background: #42E73A;
+	background: #2D9B27;
 	border-top: 3px solid #00675C;
 	color: white;
 	padding: 1em;
@@ -143,16 +140,22 @@ ul {
 	float: right;
 }
 .header{
-	background: #D2F700;
+	background: #0ACF00;
 	height: 55px;
 	border-bottom: 2px solid #FF6200;
 }
 .margin-left-20{
 	margin-left: 20px;
 }
+.margin10{
+	margin: 10px;
+}
 .list-item{
 	display: inline-block;
 	vertical-align: middle;
+}
+.padding10{
+	padding: 10px;
 }
 .post-button{
 	position: fixed;
@@ -219,6 +222,9 @@ ul {
 }
 .width-50{
 	width: 50%;
+}
+.width-350{
+	width: 350px;
 }
 .wrapper-transparent{
 	background: rgba(200,200,200,.5);

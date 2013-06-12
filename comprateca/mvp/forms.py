@@ -8,6 +8,7 @@ class ArticleForm(ModelForm):
 		model = Article
 		exclude = ('owner','date',)
 		widgets = {
-			'title':TextInput(attrs={'class':'input-form width-50','placeholder':'Titulo del Articulo'}),
-			'price':TextInput(attrs={'class':'input-form width-30','placeholder':'Precio'}),
+			'title':TextInput(attrs={'class':'input-form width-350 padding10','placeholder':'Nombre del producto'}),
+			'price':TextInput(attrs={'class':'input-form width-350 padding10','placeholder':'Precio al que lo deseas', \
+				'style':'position:relative;top:-20px'}),
 		}
