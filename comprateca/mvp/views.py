@@ -80,7 +80,7 @@ def search(request):
 
 
 def all_articles(request):
-	articles = Article.objects.all().order_by('date')[:100]
+	articles = Article.objects.all().order_by('-date')[:100]
 	return render_to_response('mvp/articles.html',
 		{'articles':articles}, context_instance=RequestContext(request))
 
