@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block fb_tags %}
+<meta property="fb:admins" content="{ {{ article.owner.facebookprofile.facebook_id }} }"/>
+{% endblock %}
+
 {% block content %}
 
 {% include 'django_facebook/_facebook_js.html' %}
