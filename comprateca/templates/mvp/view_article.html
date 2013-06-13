@@ -11,8 +11,10 @@
 	<div class="wrapper-transparent">
 		<div class="list-item">
 			<div class="list-item">
-				<p class="margin10 color-blue" style="font-size:0.3em">{{ article.owner.get_full_name }}</p>
-				<img src="http://graph.facebook.com/{{ article.owner.facebookprofile.facebook_id }}/picture?width=60&height=150">
+				<a href="http://www.facebook.com/profile.php?id={{ article.owner.facebookprofile.facebook_id }}">
+					<p class="margin10 color-blue" style="font-size:0.3em">{{ article.owner.get_full_name }}</p>
+					<img src="http://graph.facebook.com/{{ article.owner.facebookprofile.facebook_id }}/picture?width=60&height=150">
+				</a>
 			</div>
 		</div>
 		<div class="list-item" style="width:500px;position:relative;top:14px">
